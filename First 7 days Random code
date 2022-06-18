@@ -1,0 +1,203 @@
+import UIKit
+
+//let actors = Set(["Denzel Washington", "Tom Cruise", "Nicolas Cage", "Samuel L Jackson"])
+
+//var actors = Set<String>()
+//actors.insert("Denzel Washington")
+//actors.insert("Tom Cruise")
+//actors.insert("Nicolas Cage")
+//actors.insert("Samuel L Jackson")
+//print(actors)
+
+//enum Weekday {
+    //case monday
+    //case tuesday
+    //case wednesday
+    //case thursday
+    //case friday
+    //}
+
+//enum Month {
+//case january, febuary, march, april, may, //june, july
+//}
+//var day = Weekday.monday
+//day = Weekday.tuesday
+//day = Weekday.friday
+
+//let playerName: String = "Roy"
+//let luckyNumber: Int = 13
+//let pi: Double = 3.141
+//var isAuthenticated: Bool = true
+
+//enum UIStyle {
+//case light, dark, system
+//}
+
+//var style = UIStyle.light 
+//style = .dark 
+
+//let ourName = "Dave Lister"
+//let friendName = "Arnold Rimmer"
+
+//if ourName < friendName {
+//print("It's \(friendName) vs \(ourName)")
+//}
+//if ourName > friendName {
+//print("It's \(ourName) vs \(friendName)")
+//}
+
+//var numbers = [1, 2, 3 ]
+//print(numbers)
+//numbers.append(4)
+
+//if numbers.count > 3 {
+//numbers.remove(at: 0)
+//}
+//print(numbers)
+
+//let name = "Taylor Swift"
+//if name != "Anonymous" {
+//print("Welcome \(name)")
+//}
+
+//var username = "E"
+
+//if username.isEmpty == true {
+//username = "Anonymous"
+//}
+//print("Welcome \(username)")
+
+//let userAge = 14
+//let hasParentalConsent = true
+
+//if userAge >= 18 || hasParentalConsent == true {
+//print("You can buy the game!")
+//}
+
+//enum TransportOption {
+//case airplane, helicopter, bicycle, car, escooter
+//}
+//let transport = TransportOption.airplane
+
+//if transport == .airplane || transport == .helicopter {
+//print("Let's fly!")
+//} else if  transport == .bicycle {
+//print("I hope there's a bike path...")
+//} else if transport == .car {
+//print("Time to get stuck in traffic.")
+//} else {
+//print("I'm going to hire a scooter now!")
+//}
+
+//let place = "Metropolis"
+
+//switch place {
+//case "Gotham":
+//print("You're Batman!")
+//case "Mega-City One":
+//print("You're Judge Dread!")
+//case "Wakanda":
+//print("You're Black Panther!")
+//default: 
+//print("Who are you?")
+//}
+
+//let day = 5 
+//print("My true love gave to me...")
+
+//switch day {
+//case 5:
+//print("Five golden rings!")
+//fallthrough 
+//case 4:
+//print("Four calling birds,")
+//fallthrough 
+//case 3:
+//print("Three French Hens,")
+//fallthrough 
+//case 2:
+//print("Two turtle doves,")
+//fallthrough 
+//default:
+//print("A partridge in a pear tree")
+//}
+
+let age = 18
+let canVote = age >= 18 ? "Yes" : "No"
+
+let hour = 23
+print(hour < 12 ? "It's before noon" : "It's after noon.")
+
+let names = ["Jayne", "Kaylee", "Mal"]
+let crewCount = names.isEmpty ? "No one" : "\(names.count) people"
+print(crewCount)
+
+
+import SwiftUI
+
+let platforms = ["iOS", "macOS", "tvOS", "watchOS"]
+
+for os in platforms {
+    print("Swift works great on \(os).")
+}
+
+for i in 1...12 {
+    print("5 x \(i) is \(5 * i)")
+}
+
+var roll = 0 
+while roll != 20 {
+    roll = Int.random(in: 1...20)
+    print("I rolled a \(roll)")
+}
+
+let number1 = 4
+let number2 = 14
+var multiples = [Int]()
+
+for i in 1...100_000 {
+    if i.isMultiple(of: number1) && i.isMultiple(of: number2) {
+        multiples.append(i)
+        if multiples.count == 10 {
+            break
+        }
+    }
+}
+print(multiples)
+
+
+import SwiftUI
+
+func printTimesTables(number: Int, end: Int) {
+    for i in 1...end {
+        print("\(i) * \(number) is \(i * number)")
+    }
+}
+//printTimesTables(number: 5, end: 20)
+
+let str1 = "abc"
+let str2 = "cab"
+
+func compareStrings(str1: String, str2: String) -> Bool {
+    let first = str1.sorted()
+    let second = str2.sorted()
+    return first == second
+}
+
+let value = compareStrings(str1: "abcd", str2: "dbca")
+print(value)
+
+func pythagoras(a: Double, b: Double) -> Double {
+    sqrt(a * a + b * b)
+}
+
+let c = pythagoras(a: 27, b: 57)
+print(c)
+
+func getUser() -> (firstName: String, lastName: String) {
+    (firstName:"Taylor", lastName: "Swift")
+}
+
+let user = getUser()
+print("Name: \(user.firstName) \(user.lastName)")
+

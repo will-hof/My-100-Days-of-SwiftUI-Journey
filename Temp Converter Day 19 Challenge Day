@@ -1,0 +1,54 @@
+import SwiftUI
+
+struct ContentView: View {
+    @State private var inputTemp = 0.0
+    @State private var outputTemp = 0.0
+    @State private var unitSelect = "Fahrenheit"
+    
+    let unitSelects = ["Fahrenheit", "Celsius"]
+    var output: Double {
+        let inTemp = Double(inputTemp)
+        if unitSelect == "Fahrenheit" {
+            let outputTem = (inTemp - 32) * (5/9) 
+            return outputTem
+        } else {
+            let outputTem = inTemp * (9/5) + 32
+            return outputTem
+        }
+        
+    }
+    var body: some View {
+        NavigationView {
+            
+            Form {
+                Section {
+                    TextField("Input Tempature here", value: $inputTemp, format: .number)
+                } header: {
+                    Text("If The Tempature is:")
+                }
+                
+                Section {
+                    Picker("Converting from:", selection: $unitSelect) {
+                        ForEach(unitSelects, id: \.self) {
+                            Text($0)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                } header: {
+                    Text("degrees")
+                }
+                Section {
+                    Text(output.formatted())
+                } header: {
+                    Text("It Converts to:")
+                } footer: {
+                    Text("DEGREES")
+                }
+            }
+            .navigationTitle("Tempature Converter")
+        
+        }
+        
+    
+    }
+}
